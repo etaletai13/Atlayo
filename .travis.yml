@@ -8,7 +8,9 @@ deploy:
   provider: releases
   api_key: ${GH_TOKEN}
   file_glob: true
-  file: "./dist/*"
+  file: "./dist/*.dmg"
   on:
+    branch:
+      only: osx
     repo: etaletai13/Atlayo
     tags: true

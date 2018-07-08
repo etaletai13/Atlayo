@@ -3,10 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "devDependencies": {
-    "electron-installer-debian": "^0.8.1",
+  "dependencies": {
     "electron-installer-dmg": "^1.0.0",
-    "electron-installer-windows": "^1.1.0",
     "nativefier": "^7.6.4"
   },
   "scripts": {
@@ -17,7 +15,7 @@
     "pack.linux": "yarn electron-installer-debian --src ./Atlayo/atlayo-linux-x64 --dest ./dist --arch amd64",
     "pack.mac": "yarn electron-installer-dmg --out=./dist/ ./Atlayo/Atlayo-darwin-x64/Atlayo.app \"Atlayo\"",
     "pack.windows": "yarn electron-installer-windows --src ./Atlayo/Atlayo-win32-x64/ --dest ./dist/ --arch amd64",
-    "prepare": "yarn build.linux && yarn build.mac && yarn build.windows",
-    "test": "ls ./Atlayo"
+    "prepare": "yarn build.mac",
+    "test": "ls ./dist"
   }
 }
