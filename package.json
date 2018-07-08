@@ -1,0 +1,17 @@
+{
+  "name": "atlayo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "nativefier": "^7.6.4"
+  },
+  "scripts": {
+    "build": "yarn nativefier --disable-dev-tools --name \"Atlayo\" --app-version \"1.0.0\" --counter --bounce --width 480 --height 640 --show-menu-bar --fast-quit --disable-gpu --single-instance  https://atlayo.com ./Atlayo",
+    "build.linux": "yarn build -p linux -a x64",
+    "build.mac": "yarn build -p darwin -a x64",
+    "build.windows": "yarn build -p win32 -a x64",
+    "prepare": "yarn build.linux && yarn build.mac && yarn build.windows",
+    "test": "ls ./Atlayo"
+  }
+}
